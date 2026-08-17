@@ -1,12 +1,20 @@
 [project]
-name = "workshoptopic-mmmyyyy"
+name = "tabular-foundation-models-tabpfn-aug2026"
 version = "0.1.0"
-description = "Add your description here"
+description = "PyLadies Amsterdam workshop: tabular foundation models with TabPFN-3"
 readme = "README.md"
-requires-python = ">=3.8"
-dependencies = []
-
-[tool.uv]
-dev-dependencies = [
-    "pre-commit>=3.5.0",
+# tabpfn-client requires >=3.10; Colab currently ships 3.12.
+requires-python = ">=3.10"
+dependencies = [
+    "tabpfn-client>=0.4,<0.5",                  # the API client (all sections)
+    "tabpfn-extensions[interpretability]>=0.5", # section 3: partial dependence
+    "shap>=0.46",                               # section 3: beeswarm, waterfall
+    "tabpfn-time-series>=1.2",                  # section 4: forecasting
+    "scikit-learn>=1.6",                        # root_mean_squared_error needs >=1.6
+    "pandas>=2.1",
+    "matplotlib>=3.8",
+    "statsmodels>=0.14",                        # the Mauna Loa CO2 series
+    "jupyterlab>=4.2",
+    "ipykernel>=6.29",                          # so the venv shows up as a kernel
+    "pre-commit>=3.5",
 ]

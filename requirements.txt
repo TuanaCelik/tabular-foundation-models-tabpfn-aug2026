@@ -1,0 +1,15 @@
+# For Google Colab and plain-pip users. The notebook's first cell installs these too.
+#
+# Deliberately unpinned: Colab already ships compatible numpy / pandas / matplotlib /
+# scikit-learn, and hard pins would trigger a long reinstall and a runtime restart
+# mid-workshop. For a reproducible local setup use `uv sync`, which resolves uv.lock.
+tabpfn-client>=0.4,<0.5                     # the API client (all sections)
+tabpfn-extensions[interpretability]>=0.5    # section 3: partial dependence
+shap>=0.46                                  # section 3: beeswarm, waterfall
+tabpfn-time-series>=1.2                     # section 4: forecasting
+scikit-learn>=1.6                           # root_mean_squared_error needs >=1.6
+pandas>=2.1
+matplotlib>=3.8
+statsmodels>=0.14                           # the Mauna Loa CO2 series
+jupyterlab>=4.2
+ipykernel>=6.29
